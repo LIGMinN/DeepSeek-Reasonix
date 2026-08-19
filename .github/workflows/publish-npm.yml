@@ -5,15 +5,7 @@ name: Publish npm
 # (see release.yml) — pushing one of those never reaches this
 # workflow, so the two release tracks are fully decoupled.
 on:
-  push:
-    tags: ["v*"]
   workflow_dispatch:
-    inputs:
-      tag:
-        description: "Tag to publish (e.g. v0.47.0). Required when running manually."
-        required: true
-        type: string
-
 permissions:
   contents: read
   # `id-token: write` is the npm provenance handshake — harmless if we
